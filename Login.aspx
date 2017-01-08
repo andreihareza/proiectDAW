@@ -1,26 +1,34 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Layout.master" CodeFile="Login.aspx.cs" Inherits="_Default" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:Label ID="Label1" runat="server" Text="User"></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
-        <br />
-
-        <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-
-        <br />
-
-        <asp:Button ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" />
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel panel-heading">
+                    <h3>Login</h3>
+                </div>
+                <div class="panel panel-body">
+                    <form id="form1" class="" runat="server">
+                        <div class="form-group ">
+                            <div class="input-group">
+                                <asp:Label ID="Label1" class="input-group-addon glyphicon glyphicon-user" runat="server"></asp:Label>
+                                <asp:TextBox ID="TextBox1" placeholder="User Name" class="form-control" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="input-group">
+                                <asp:Label ID="Label2" class="input-group-addon glyphicon glyphicon-lock" runat="server"></asp:Label>
+                                <asp:TextBox ID="TextBox2" placeholder="Password" class="form-control" TextMode="Password" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <asp:Button ID="Button1" class="btn btn-success pull-right" runat="server" Text="Login" OnClick="Button1_Click" />
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    </form>
-</body>
-</html>
+
+</asp:Content>
+
