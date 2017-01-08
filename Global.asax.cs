@@ -11,6 +11,7 @@ namespace proiectDAW
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            Response.Redirect("Register.aspx");
         }
     }
 }
