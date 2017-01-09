@@ -82,7 +82,8 @@ public partial class _Default : System.Web.UI.Page
     private void loadPosts()
     {
         int sectionId = int.Parse(Request.QueryString["id"]);
-        string query = "SELECT * from posts WHERE sectiune_id = @ID_SECTIUNE";
+        string query = "SELECT * from posts WHERE sectiune_id = @ID_SECTIUNE " +
+            "ORDER BY updated_at DESC";
 
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\proiectDAW\App_Data\proiectDAW.mdf;Integrated Security=True");
 
