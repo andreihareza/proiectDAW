@@ -93,7 +93,7 @@ public partial class Register : System.Web.UI.Page
 
             SqlDataReader reader = com.ExecuteReader();
 
-            while(reader.Read())
+            if (reader.Read())
             {
                 return Int32.Parse(reader["id"].ToString());
             }

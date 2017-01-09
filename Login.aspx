@@ -14,17 +14,18 @@
                         <div class="form-group ">
                             <div class="input-group">
                                 <asp:Label ID="Label1" class="input-group-addon glyphicon glyphicon-user" runat="server"></asp:Label>
-                                <asp:TextBox ID="TextBox1" placeholder="User Name" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="UserID" placeholder="User Name" class="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group ">
                             <div class="input-group">
                                 <asp:Label ID="Label2" class="input-group-addon glyphicon glyphicon-lock" runat="server"></asp:Label>
-                                <asp:TextBox ID="TextBox2" placeholder="Password" class="form-control" TextMode="Password" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="PasswordID" placeholder="Password" class="form-control" TextMode="Password" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <asp:Button ID="Button1" class="btn btn-success pull-right" runat="server" Text="Login" OnClick="Button1_Click" />
                     </form>
+                    <asp:Label ID="MessageID" runat="server" Text=""></asp:Label>
                 </div>
             </div>
         </div>

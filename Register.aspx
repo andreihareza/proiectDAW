@@ -36,8 +36,10 @@
                             </div>
                         </div>
                         <asp:Button ID="Button1" class="btn btn-success pull-right" runat="server" Text="Register" OnClick="Button1_Click" />
-
                     </form>
                     <asp:Label ID="MessageID" runat="server" Text=""></asp:Label>
                 </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
