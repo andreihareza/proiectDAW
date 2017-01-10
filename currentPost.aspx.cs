@@ -10,11 +10,21 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
         MessageID.Text = "";
         TitleID.InnerText = getCurrentPostTitle();
-
         currentPost.Text = loadCurrentPost();
         answersList.Text = loadAnswers();
+        if (Session != null && Session["loggedIn"] != null && Session["loggedIn"].ToString() != "")
+        {
+            answerVisibility.Visible = true;
+
+        }
+        else
+        {
+            answerVisibility.Visible = false; 
+
+        }
     }
 
     private string getCurrentPostTitle()
@@ -154,5 +164,40 @@ public partial class _Default : System.Web.UI.Page
             con.Close();
         }
         return "";
+    }
+    
+    protected void AddAnswer(object Sender , EventArgs e)
+    {
+        int postId = int.Parse(Request.QueryString["id"]);
+
+        string query = "INSERT INTO answers (continut, user_id, post_id, created_at, updated_at)"
+            + " VALUES (@CONTENT, @USER_ID, @POST_ID, @CREATED_AT, @UPDATED_AT)";
+
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\proiectDAW\App_Data\proiectDAW.mdf;Integrated Security=True");
+
+        con.Open();
+
+        try
+        {
+            DateTime currentTime = DateTime.Now;
+
+            SqlCommand com = new SqlCommand(query, con);
+            com.Parameters.AddWithValue("CONTENT", textAnswer.Value);
+            com.Parameters.AddWithValue("USER_ID", Session["loggedIn"]);
+            com.Parameters.AddWithValue("POST_ID", postId);
+            com.Parameters.AddWithValue("CREATED_AT", currentTime);
+            com.Parameters.AddWithValue("UPDATED_AT", currentTime);
+
+            com.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+            MessageID.Text = "Database user insert error : " + ex.Message;
+        }
+        finally
+        {
+            con.Close();
+        }
+        Response.Redirect(Request.RawUrl);
     }
 }
