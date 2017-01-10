@@ -27,10 +27,11 @@
                     <li><a href="Home.aspx">Home</a></li>
                     <li><a href="Sectiuni.aspx">Sectiuni</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" id="loginbuttons" runat="server">
                     <li><a href="Register.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                     <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
+                <button runat="server" class="nav navbar-nav navbar-right" id="logout" onclick="clickLogout">Log out</button>
             </div>
         </div>
     </nav>

@@ -15,7 +15,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string query = "SELECT name, parola from users WHERE name LIKE @NAME";
+        string query = "SELECT id, name, parola from users WHERE name LIKE @NAME";
 
         string userName = UserID.Text;
         string password = PasswordID.Text;
@@ -35,7 +35,7 @@ public partial class _Default : System.Web.UI.Page
             {
                 if (reader["parola"].ToString() == password)
                 {
-                    Session["loggedIn"] = "true";
+                    Session["loggedIn"] = reader["id"].ToString();
                 }
                 else
                 {

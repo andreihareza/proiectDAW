@@ -11,6 +11,8 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         MessageID.Text = "";
+        FormPost.Text = "";
+        postTemplate.Visible = false;
         TitleID.InnerText = getCurrentSectionTitle();
 
         loadPosts();
@@ -83,7 +85,7 @@ public partial class _Default : System.Web.UI.Page
     {
         int sectionId = int.Parse(Request.QueryString["id"]);
         string query = "SELECT * from posts WHERE sectiune_id = @ID_SECTIUNE " +
-            "ORDER BY updated_at DESC";
+            "ORDER BY update_at DESC";
 
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\proiectDAW\App_Data\proiectDAW.mdf;Integrated Security=True");
 
@@ -121,4 +123,44 @@ public partial class _Default : System.Web.UI.Page
             con.Close();
         }
     }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        postTemplate.Visible = true;
+    }
+    protected void AddPost(object sender, EventArgs e)
+    {
+        int sectionId = int.Parse(Request.QueryString["id"]);
+
+        string query = "INSERT INTO posts (nume, continut, created_at, update_at, user_id, sectiune_id)"
+            + " VALUES (@NAME, @CONTENT, @CREATED_AT, @UPDATED_AT, @USER_ID, @SECTION_ID)";
+
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\proiectDAW\App_Data\proiectDAW.mdf;Integrated Security=True");
+
+        con.Open();
+
+        try
+        {
+            DateTime currentTime = DateTime.Now;
+
+            SqlCommand com = new SqlCommand(query, con);
+            com.Parameters.AddWithValue("name", titlu.Value);
+            com.Parameters.AddWithValue("CONTENT", continut.Value);
+            com.Parameters.AddWithValue("CREATED_AT", currentTime);
+            com.Parameters.AddWithValue("UPDATED_AT", currentTime);
+            com.Parameters.AddWithValue("USER_ID", Session["loggedIn"]);
+            com.Parameters.AddWithValue("SECTION_ID", sectionId);
+
+            com.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+            MessageID.Text = "Database user insert error : " + ex.Message;
+        }
+        finally
+        {
+            con.Close();
+        }
+        Response.Redirect(Request.RawUrl);
+    }
+
 }

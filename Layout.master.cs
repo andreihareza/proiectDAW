@@ -11,4 +11,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
 
     }
+
+    protected void clickLogout(object sender, EventArgs e)
+    {
+        Session.RemoveAll();
+    }
 }
