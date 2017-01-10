@@ -9,7 +9,6 @@
                 </div>
                 <div class="panel panel-body">
 
-                    <form id="form1" runat="server">
                         <div class="form-group">
                             <div class="input-group">
                                 <asp:Label class="input-group-addon glyphicon glyphicon-user" ID="Label1" runat="server"></asp:Label>
@@ -36,7 +35,6 @@
                             </div>
                         </div>
                         <asp:Button ID="Button1" class="btn btn-success pull-right" runat="server" Text="Register" OnClick="Button1_Click" />
-                    </form>
                     <asp:Label ID="MessageID" runat="server" Text=""></asp:Label>
                 </div>
             </div>

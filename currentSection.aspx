@@ -5,7 +5,6 @@
     <div class="well">
         <h1 class="text-center" id="TitleID" runat="server">Forum</h1>
     </div>
-    <form id="form1" class="" runat="server">
         <asp:Button tyApe="button" runat="server" class="btn btn-success" ToolTip="add new post" Text="Add new post" OnClick="Button1_Click"></asp:Button>
         <div id="postTemplate" visible="false" runat="server">
             <asp:Label ID="FormPost" runat="server"></asp:Label>
@@ -19,7 +18,6 @@
             </div>
             <asp:Button OnClick='AddPost' class='btn btn-success' runat='server' Text='Post' ID='buttonPost'></asp:Button>
         </div>
-    </form>
     <br />
     <asp:Label ID="postsList" runat="server">
    

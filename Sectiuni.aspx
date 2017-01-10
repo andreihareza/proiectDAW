@@ -7,10 +7,6 @@
     </div>
     <asp:Label ID="sectionsList" runat="server">
    
-    <form method ="POST"  runat="server">
-         
-    </form>
-
     </asp:Label>
 
     <asp:Label ID="MessageID" runat="server" Text=""></asp:Label>

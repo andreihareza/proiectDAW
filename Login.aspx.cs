@@ -36,6 +36,7 @@ public partial class _Default : System.Web.UI.Page
                 if (reader["parola"].ToString() == password)
                 {
                     Session["loggedIn"] = reader["id"].ToString();
+                    Response.Redirect("Home.aspx");
                 }
                 else
                 {

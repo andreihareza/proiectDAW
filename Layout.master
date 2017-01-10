@@ -12,6 +12,7 @@
 
 <body>
 
+    <form id="form1" runat="server">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -27,11 +28,11 @@
                     <li><a href="Home.aspx">Home</a></li>
                     <li><a href="Sectiuni.aspx">Sectiuni</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right" id="loginbuttons" runat="server">
-                    <li><a href="Register.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <ul class="nav navbar-nav navbar-right" runat="server">
+                    <li id="registerButton" runat="server"><a href="Register.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li id="loginButton" runat="server"><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><asp:Button runat="server" class="btn btn-sm" id="logoutButton" OnClick="clickLogout" Text="Log out"></asp:Button></li>
                 </ul>
-                <button runat="server" class="nav navbar-nav navbar-right" id="logout" onclick="clickLogout">Log out</button>
             </div>
         </div>
     </nav>
@@ -43,5 +44,6 @@
         </asp:ContentPlaceHolder>
 
     </div>
+    </form>
 </body>
 </html>

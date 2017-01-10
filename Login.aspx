@@ -10,7 +10,6 @@
                     <h3>Login</h3>
                 </div>
                 <div class="panel panel-body">
-                    <form id="form1" class="" runat="server">
                         <div class="form-group ">
                             <div class="input-group">
                                 <asp:Label ID="Label1" class="input-group-addon glyphicon glyphicon-user" runat="server"></asp:Label>
@@ -24,7 +23,6 @@
                             </div>
                         </div>
                         <asp:Button ID="Button1" class="btn btn-success pull-right" runat="server" Text="Login" OnClick="Button1_Click" />
-                    </form>
                     <asp:Label ID="MessageID" runat="server" Text=""></asp:Label>
                 </div>
             </div>
