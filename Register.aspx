@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <asp:Label ID="Label4" class="input-group-addon glyphicon glyphicon-envelope" runat="server"></asp:Label>
-                                <asp:TextBox ID="EmailID" class="form-control" runat="server" placeholder="E-mail" TextMode="Email"></asp:TextBox>
+                                <asp:TextBox ID="EmailID" class="form-control" runat="server" placeholder="E-mail" TextMode="Email" required="required"></asp:TextBox>
                             </div>
                         </div>
                         <asp:Button ID="Button1" class="btn btn-success pull-right" runat="server" Text="Register" OnClick="Button1_Click" />

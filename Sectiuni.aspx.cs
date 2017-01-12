@@ -31,7 +31,7 @@ public partial class _Default : System.Web.UI.Page
             string list = "<ul class='list-group'>"; 
             while (reader.Read())
             {
-                list += "<a href ='currentSection.aspx?id=" + reader["Id"] + "'><li class='list-group-item'><div class='section'><h3 class='text-center'>"; 
+                list += "<a href='currentSection.aspx?id=" + reader["Id"] + "'><li class='list-group-item'><div class='section'><h3 class='text-center'>"; 
                 list += reader["nume"].ToString()+"</h3>";
                 list += reader["descriere"].ToString();
                 list += "<div class='pull-right'>Created at: " + reader["created_at"].ToString() + "</div>"; 

@@ -217,6 +217,7 @@ public partial class Register : System.Web.UI.Page
                         if (result == true)
                         {
                             MessageID.Text = "Success";
+                            Response.Redirect("Login.aspx");
                         }
                     }
                 }

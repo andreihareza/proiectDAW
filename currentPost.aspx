@@ -14,7 +14,7 @@
     </asp:Label>
     <div class='form-group' id="answerVisibility" runat="server">
         <label for='comment'>Answer</label>
-        <textarea class="form-control" rows="5" id="textAnswer" required="required" maxlength="999" runat="server"></textarea>
+        <textarea class="form-control" rows="5" id="textAnswer" maxlength="999" runat="server"></textarea>
         <asp:Button OnClick='AddAnswer' class='btn btn-success' runat='server' Text='Answer' ID='buttonPost'></asp:Button>
     </div>
 
